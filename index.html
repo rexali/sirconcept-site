@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Projects,Papers,Paper Presentation, Assignment Research Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+
+        *{
+    box-sizing:border-box;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    .flex-container{
+        display: flex;
+        background-color: #f1f1f1;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .flex-container button{
+     background-color: DodgerBlue;
+     margin: 2px;
+     width: 200px;
+    
+    }
+
+    
+    .flex-container>div{
+     background-color:greenyellow;
+     border: 2px solid green;
+     width: 100%;
+    }
+
+
+    .column{
+        float: left;
+       margin: 3px;
+       width: 49.3%;
+    }
+
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    height: 200px;
+    }
+    
+    @media screen and (max-width:768px) {
+
+     .column{
+
+        width: 100%;
+    }
+        
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="header" style=" background-color:aqua; text-align:center;">
+            <p>
+               <img src="path.jpg" style="border-radius:75px;" alt="picture"> <h1>Sirconcept Projects,Papers and Assignment Services</h1>
+            </p>
+          
+        </div>
+
+        <div id="blog" class="tabcontent">
+            <h2>Blog</h2>
+            <p></p>
+        </div>
+
+        <div id="forum" class="tabcontent">
+            <h2>Forum</h2>
+            <p></p>
+        </div>
+
+        <div style="text-align:center;">
+
+            <button class="tablink" onclick="displayTab(event, 'home')">Home</button>
+            
+            <button class="tablink" onclick="displayTab(event, 'about')" >About</button>
+            
+            <button class="tablink" onclick="displayTab(event, 'contact')">Contact Us</button>
+            
+            <button class="tablink" onclick="displayTab(event, 'download')">Download</button>
+            
+            <button class="tablink" onclick="displayTab(event, 'project')">Project</button>
+            
+            <button class="tablink" onclick="displayTab(event, 'forum')">Forum</button>
+            
+            <button class="tablink" onclick="displayTab(event, 'blog')">Blog</button>
+            
+        </div>
+
+        <div id="home" class="tabcontent">
+            <h2>Home</h2>
+            <p></p>
+        </div>
+
+        <div id="about" class="tabcontent">
+            <h2>About</h2>
+            <p></p>
+        </div>
+
+        <div id="contact" class="tabcontent">
+            <h2>Contact</h2>
+            <p></p>
+        </div>
+
+        <div id="download" class="tabcontent">
+            <h2>Download</h2>
+            <p></p>
+        </div>
+
+        <div id="project" class="tabcontent">
+            <h2>Project</h2>
+            <p></p>
+        </div>
+
+        
+
+        <div style="text-align:center;">
+
+            <div class="column" style="border:2px solid blue;">
+            <h2>Who We Are</h2>
+            <p></p>
+            </div>
+
+            <div class="column" style="border:2px solid blue;">
+             <h2>Where to Find Us</h2>
+             <p></p>
+            </div>
+
+            <div class="column" style="border:2px solid blue;">
+             <h2>What We Do</h2>
+             <p></p>
+             </div>
+          
+             <div class="column" style="border:2px solid blue;">
+            <h2>Send Us Message</h2>
+            <p>
+
+             <form name="mform" method= "POST" autocomplete = "off">
+
+                        <table width = "" border = "2" align= "center">
+                        
+                        <tr>
+                        <td>
+                        <label>Name: </label>
+                        </td>
+                        <td>
+                        <input type = "text" name= "name" placeholder= " Enter your name " />
+                        </td>
+                        </tr>
+                        
+                        <tr>   
+                   
+                        <td>
+                        <label>Email: </label> 
+                        </td>
+                        <td>
+                        <input type = "text" name = "email" placeholder = "Enter your email" />
+                        </td>
+                        </tr>
+                        
+                        <tr>
+                       <td>
+                       <label>Comment: </label></td>
+                       <td> 
+                       <textarea type = "text" name = "coment" rows="10" cols="30" placeholder = "Enter your message here"></textarea>
+                       </td>
+                       </tr>
+                        
+                        <tr style="text-align:center;"> 
+                        <td colspan = "2">
+                        <input type = "button" onclick="message()" name= "submit" value = "SEND" style="color:green;"/><input type = "reset" name= "submit" value = "Reset" style="color:green;"/> <br><span id="su"></span>
+                        </td>
+                        </tr>
+                        
+                        </table>
+
+                        </form>
+
+            </p>
+
+             </div>
+        
+
+        </div>
+
+
+        <div style="text-align: center;">
+                <button class="tablink" onclick="displayTab(event, 'home')">Home</button>
+                <button><a href="#">Facebook</a> </button>
+                <button><a href="#">Twitter</a></button>
+                <button class="tablink" onclick="displayTab(event, 'contact')">Contact Us</button>
+                <button class="tablink" onclick="displayTab(event, 'download')">Download</button>
+                <button class="tablink" onclick="displayTab(event, 'project')">Project</button>
+                
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+            function displayTab(evt,tabname) {
+    
+                var i,tablinks,tabcontents;
+    
+                tabcontents = document.getElementsByClassName("tabcontent");
+    
+                for (i = 0; i < tabcontents.length; i++) {
+    
+                tabcontents[i].style.display = "none";
+    
+                }   
+    
+                tablinks = document.getElementsByClassName("tablinks");
+    
+                for (i = 0; i < tablinks.length; i++) {
+    
+                tablinks[i].className = tablinks[i].className.replace("active", "");
+    
+                }
+    
+                document.getElementById(tabname).style.display = "block";
+    
+                evt.currentTarget.className += " active";
+                
+            }
+
+            function message() {
+
+                var obj, dbParam, xmlhttp, myObj, x = "";
+
+                var na = document.forms["mform"]["name"].value;
+                var em = document.forms["mform"]["email"].value;
+                var co = document.forms["mform"]["coment"].value;
+
+                var obj ={"name":na,"email":em,"coment":co};
+                
+                document.getElementById("su").innerHTML="Sending...";
+                
+                dbParam = JSON.stringify(obj);
+
+                if (window.XMLHttpRequest) {
+                // code for modern browsers
+                xmlhttp = new XMLHttpRequest();
+                } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                 }
+
+                xmlhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+
+                var myobj = JSON.parse(this.responseText);
+    
+                document.getElementById("su").innerHTML= " ";
+                document.getElementById("su").innerHTML= myobj.result;
+                
+                }
+                
+                };
+
+                xmlhttp.open("POST", "message.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send("x=" + dbParam);
+
+                document.forms["mform"]["name"].value='';
+                document.forms["mform"]["email"].value='';
+                document.forms["mform"]["coment"].value='';
+
+
+
+           }
+                    
+            
+            </script>
+</body>
+</html>
